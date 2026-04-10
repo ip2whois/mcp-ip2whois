@@ -1,0 +1,58 @@
+{
+  "dxt_version": "0.1",
+  "name": "ip2whois",
+  "display_name": "IP2WHOIS MCP Server",
+  "version": "1.0.0",
+  "description": "WHOIS domain MCP server that query the WHOIS information using IP2WHOIS API.",
+  "long_description": "This is a simple Model Context Protocol (MCP) server implementation for IP2WHOIS API. It will return WHOIS information for a domain, including expiry dates, registrar information, and registrant data.",
+  "keywords": ["domain", "whois", "domain WHOIS", "python", "registrar", "registrant"],
+  "license": "MIT",
+  "author": {
+    "name": "IP2WHOIS",
+    "email": "support@ip2whois.com",
+    "url": "https://github.com/ip2whois"
+  },
+  "homepage": "https://github.com/ip2whois/mcp-ip2whois",
+  "icon": "icon.png",
+  "screenshots": [
+    "example.png"
+  ],
+  "server": {
+    "type": "python",
+    "entry_point": "src/server.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": [
+            "--directory",
+            "${__dirname}/src",
+            "run",
+            "server.py"
+          ],
+      "env": {
+        "IP2WHOIS_API_KEY": "${user_config.ip2whoisapi_key}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "get_whois",
+      "description": "Look up WHOIS data for a domain name."
+    }
+  ],
+  "compatibility": {
+    "claude_desktop": ">=0.10.0",
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "python": ">=3.8,<4.0"
+    }
+  },
+  "user_config": {
+    "ip2whoisapi_key": {
+      "type": "string",
+      "title": "IP2WHOIS API Key",
+      "description": "Your IP2WHOIS API key for detailed WHOIS information.",
+      "sensitive": true,
+      "required": false
+    }
+  }
+}
