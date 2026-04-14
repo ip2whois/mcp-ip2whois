@@ -1,4 +1,5 @@
 # IP2WHOIS MCP Server
+[![mcp-ip2whois MCP server](https://glama.ai/mcp/servers/ip2whois/mcp-ip2whois/badges/score.svg)](https://glama.ai/mcp/servers/ip2whois/mcp-ip2whois)
 
 A Model Context Protocol (MCP) server that provides comprehensive WHOIS lookup capabilities using the **IP2WHOIS API**. This server allows AI agents to query domain registration details, including expiry dates, registrar information, and registrant data.
 
