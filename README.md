@@ -1,11 +1,13 @@
 # IP2WHOIS MCP Server
 [![mcp-ip2whois MCP server](https://glama.ai/mcp/servers/ip2whois/mcp-ip2whois/badges/score.svg)](https://glama.ai/mcp/servers/ip2whois/mcp-ip2whois)
 
-A Model Context Protocol (MCP) server that provides comprehensive WHOIS lookup capabilities using the **IP2WHOIS API**. This server allows AI agents to query domain registration details, including expiry dates, registrar information, and registrant data.
+A Model Context Protocol (MCP) server that provides comprehensive WHOIS lookup capabilities using the **IP2WHOIS API**. This server allows AI agents to query domain registration details, including expiry dates, registrar information, and registrant data. This server also supports query on hosted domains by IP address.
 
 ## Features
 
 -   **Domain Lookup**: Retrieve detailed WHOIS data for any domain name.
+
+-   **Hosted Domains Lookup**: Retrieve hosted domains data for any IP address.
     
 -   **Comprehensive Data**: Includes domain age, nameservers, registrar info, and administrative/billing contact details.
     
@@ -50,7 +52,7 @@ Follow the steps to use this MCP server with Claude Desktop:
 
 ## Usage
 
-Just enter your query about the IP in a chat in Claude Desktop. Some of the example query will be:
+To query the WHOIS information, just enter your query about the domain in a chat in Claude Desktop. Some of the example query will be:
 
 - Who is the registrar of the (domain)?
 - Who is the owner of (domain)?
@@ -59,6 +61,11 @@ Just enter your query about the IP in a chat in Claude Desktop. Some of the exam
 For instance, below is the result of the domain google.com:
 
 ![The output of the domain google.com](example.png "The output of the domain google.com")
+
+To query for the hosted domains by IP address, just enter your query about the IP in a chat in Claude Desktop. Some of the example query will be:
+- What domains did (IP) have?
+- What are the domains in (IP)?
+- What's the domain owned by (IP)?
 
 In Claude Desktop, the model will automatically generate the output based on the result returned by IP2WHOIS MCP server.
 
@@ -89,6 +96,16 @@ Look up WHOIS data for a domain name.
     -   `registrant` (name, organization, country)
         
     -   `nameservers`
+
+### `get_hosted_domains`
+
+Query for the list of hosted domain names by IP address.
+
+-   **Arguments**:
+    
+    -   `ip` (string): The IP address (IPv4 or IPv6) to look up.
+        
+-   **Output**: Returns a JSON object containing the domains hosted on the ip address, and the total number of hosted domains found
 
 ## License
 

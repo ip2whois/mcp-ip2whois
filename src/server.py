@@ -9,6 +9,7 @@ mcp = FastMCP("ip2whois")
 
 # Constants
 IPW_API_BASE = "https://api.ip2whois.com/v2"
+IPW_DOMAIN_API_BASE = "https://domains.ip2whois.com/domains"
 USER_AGENT = "ip2whois-app/1.0"
 
 def get_api_key() -> str | None:
@@ -51,6 +52,28 @@ async def get_whois(domain: str) -> Dict[str, Any] | str:
         return f"Unable to fetch WHOIS information for domain {domain}."
 
     return whois_result
+
+@mcp.tool()
+async def get_hosted_domains(ip: str) -> Dict[str, Any] | str:
+    """
+    Lookup for the list of hosted domain names by IP address.
+
+    Args:
+        ip: The ip address (IPv4 or IPv6) to look up.
+
+    Returns:
+        A JSON string result includes the domains hosted on the ip address, and the 
+        total number of hosted domains found.
+    """
+    params = {"ip": ip}
+    api_key = get_api_key()
+    params["key"] = api_key  # IP2WHOIS API key parameter
+    hosted_domain_result = await make_request(IPW_DOMAIN_API_BASE, params)
+
+    if not hosted_domain_result:
+        return f"Unable to fetch hosted domain information for ip {ip}."
+
+    return hosted_domain_result
 
 if __name__ == "__main__":
     mcp.run(transport='stdio')
