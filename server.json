@@ -1,0 +1,29 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.ip2whois/mcp-ip2whois",
+  "description": "WHOIS domain MCP server that query the WHOIS information using IP2WHOIS API.",
+  "repository": {
+    "url": "https://github.com/ip2whois/mcp-ip2whois",
+    "source": "github"
+  },
+  "version": "1.2.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "mcp-ip2whois",
+      "version": "1.2.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "description": "Your IP2WHOIS API key for detailed WHOIS information.",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": true,
+          "name": "IP2WHOIS_API_KEY"
+        }
+      ]
+    }
+  ]
+}
