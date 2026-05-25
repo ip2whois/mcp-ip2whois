@@ -22,23 +22,17 @@ The setup also use `uv`, which can be install by following [the guide](https://m
 ## Setup
 
 Follow the steps to use this MCP server with Claude Desktop:
- 1. Download the repository to your local.
- 2. Setup the `uv` package manager, you can once again refer to [the guide](https://modelcontextprotocol.io/quickstart/server#set-up-your-environment) to do so.
- 3. Make sure you have installed the Claude Desktop, if you haven't, kindly download from [here](https://claude.ai/download) for Windows and MacOS users, or follow [this guide](https://modelcontextprotocol.io/quickstart/client) for Linux user.
- 4. Open the `claude_desktop_config.json` in your choice of editor, if you do not having one yet, follow [this guide](https://modelcontextprotocol.io/quickstart/server#testing-your-server-with-claude-for-desktop) to create one.
- 5. Add the following to your `claude_desktop_config.json`:
+ 1. Setup the `uv` package manager, you can once again refer to [the guide](https://modelcontextprotocol.io/quickstart/server#set-up-your-environment) to do so.
+ 2. Make sure you have installed the Claude Desktop, if you haven't, kindly download from [here](https://claude.ai/download) for Windows and MacOS users, or follow [this guide](https://modelcontextprotocol.io/quickstart/client) for Linux user.
+ 3. Open the `claude_desktop_config.json` in your choice of editor, if you do not having one yet, follow [this guide](https://modelcontextprotocol.io/quickstart/server#testing-your-server-with-claude-for-desktop) to create one.
+ 4. Add the following to your `claude_desktop_config.json`:
 
 ```json
 {
   "mcpServers": {
     "ip2whois": {
-      "command": "uv",
-      "args": [
-        "--directory",
-        "/path/to/ip2whois/src",
-        "run",
-        "server.py"
-      ],
+      "command": "uvx",
+      "args": ["mcp-ip2whois"],
       "env": {
         "IP2WHOIS_API_KEY": "<YOUR API key HERE>"
       }
@@ -46,9 +40,8 @@ Follow the steps to use this MCP server with Claude Desktop:
   }
 }
 ```
- 6. Remember to replace the `/path/to/ip2whois`  path with your actual path to IP2WHOIS MCP server in local.
- 7. To get your API key, just [login](https://www.ip2location.io/log-in) to your dashboard and get it from there. Replaced the `<YOUR API key HERE>` in above with your actual API key.
- 8. Restart the Claude Desktop after save the changes, and you should see it appear in the `Search and tools` menu.
+ 5. To get your API key, just [login](https://www.ip2location.io/log-in) to your dashboard and get it from there. Replaced the `<YOUR API key HERE>` in above with your actual API key.
+ 6. Restart the Claude Desktop after save the changes, and you should see it appear in the `Search and tools` menu.
 
 ## Usage
 
