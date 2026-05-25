@@ -1,0 +1,25 @@
+{
+  "name": "mcp-ip2whois",
+  "version": "1.2.0",
+  "description": "WHOIS domain MCP server that query the WHOIS information using IP2WHOIS API.",
+  "license": "MIT",
+  "author": {
+    "name": "IP2WHOIS",
+    "email": "support@ip2whois.com",
+    "url": "https://github.com/ip2whois"
+  },
+  "homepage": "https://github.com/ip2whois/mcp-ip2whois",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "domain",
+    "whois",
+    "domain WHOIS",
+    "python",
+    "registrar",
+    "registrant"
+  ],
+  "scripts": {
+    "start": "uv --directory ./src run server.py"
+  }
+}

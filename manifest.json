@@ -1,8 +1,8 @@
 {
   "dxt_version": "0.1",
-  "name": "ip2whois",
+  "name": "mcp-ip2whois",
   "display_name": "IP2WHOIS MCP Server",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "WHOIS domain MCP server that query the WHOIS information using IP2WHOIS API.",
   "long_description": "This is a simple Model Context Protocol (MCP) server implementation for IP2WHOIS API. It will return WHOIS information for a domain, including expiry dates, registrar information, and registrant data.",
   "keywords": ["domain", "whois", "domain WHOIS", "python", "registrar", "registrant"],

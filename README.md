@@ -110,3 +110,5 @@ Query for the list of hosted domain names by IP address.
 ## License
 
 See the LICENSE file.
+
+<!-- mcp-name: io.github.ip2whois/mcp-ip2whois -->
